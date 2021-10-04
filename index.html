@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JAVASCRIPT - DREAM FOLLOWERS</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">JAVASCRIPT - DREAM FOLLOWERS</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+
+          <ul class="navbar-nav d-flex flex-row me-1">
+            <li class="nav-item me-3 me-lg-0">
+              <a
+                class="nav-link"
+                href="https://www.instagram.com/_dream_followers_am/"
+                target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </li>
+            <li class="nav-item me-3 me-lg-0">
+              <a
+                class="nav-link"
+                href="https://twitter.com/_DreamFollowers"
+                target="_blank"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid mt-5 p-5 row">
+      <div class="col-sm-4">
+        <h4>Elige un tema</h4>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="tema" onclick="theme('n')" />
+          <label class="form-check-label" for="tema"> Navidad </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="tema" onclick="theme('m')" />
+          <label class="form-check-label" for="tema"> Independencia </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="tema" onclick="theme('p')" />
+          <label class="form-check-label" for="tema"> Día del programador </label>
+        </div>
+        <h4>Elige un marco</h4>
+        <div class="form-group">
+          <img src="" class="w-25 mr" onclick="marco(1)" />
+          <img src="" class="w-25 mr" onclick="marco(2)" />
+          <img src="" class="w-25 mr" onclick="marco(3)" />
+        </div>
+        <h4>Elige tu imagen</h4>
+        <div class="form-group">
+          <img src="" class="w-25 im" onclick="imagen(1)" />
+          <img src="" class="w-25 im" onclick="imagen(2)" />
+          <img src="" class="w-25 im" onclick="imagen(3)" />
+        </div>
+        <h4>Elige un color de texto y fondo</h4>
+        <div class="form-group">
+          <label for="colort">da click y selecciona un color de texto:</label>
+          <input type="color" name="colort" id="colort" onchange="clrt()">
+        </div>
+        <div class="form-group">
+          <label for="color">da click y selecciona un color de fondo:</label>
+          <input type="color" name="color" id="color" onchange="clr()">
+        </div>
+        <h4>Contenido de la tarjeta</h4>
+        <div class="form-group">
+          <label for="dest">Destinatario: </label>
+          <input type="text" name="dest" id="dest" onkeyup="text()">
+        </div>
+        <div class="form-group">
+          <label for="ttl">Titulo: </label>
+          <input type="text" name="ttl" id="ttl" onkeyup="text()">
+        </div>
+        <div class="form-group">
+          <label for="mss">Escribe tu mensaje: </label>
+          <textarea name="mss" id="mss" cols="30" rows="10" onkeyup="text()"></textarea>
+        </div>
+        <h4>Tamaño y tipo de letra</h4>
+        <div class="form-group">
+          <label for="tmt">lamaño de letra del titulo</label>
+          <input type="number" name="tmt" id="tmt" onchange="tmt()">
+        </div>
+        <div class="form-group">
+          <label for="tmtd">lamaño de letra del destinatario</label>
+          <input type="number" name="tmtd" id="tmtd" onchange="tmt()">
+        </div>
+        <div class="form-group">
+          <label for="tmtm">lamaño de letra del mensaje</label>
+          <input type="number" name="tmtm" id="tmtm" onchange="tmt()">
+        </div>
+        <div class="form-group">
+          <label for="tpg">tipografia</label>
+          <select name="tpg" id="tpg" onchange="tpgr()">
+            <option value="0">Selecciona una tipografia</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="button" id="imprimir" value="imprimir" onclick="imp()">
+        </div>
+      </div>
+      <div class="col-sm-8" id="imprimirv">
+        <div class="container-fluid p-3" id="bgimg">
+          <div class="card" id="bgclr">
+            <div class="card-header txt" id="destr">para:</div>
+            <div class="card-body">
+              <h5 class="card-title txt" id="ttlr">Titulo</h5>
+              <div
+                class="bg-image hover-overlay ripple"
+                data-mdb-ripple-color="light"
+              >
+                <img src="imagenes/def.png" class="img-fluid" id="immg" />
+              </div>
+              <p class="card-text txt" id="mssr">Tu mensaje.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-dark text-center text-white">
+      <div class="container p-4">
+        <section class="mb-3">
+          <p>
+            Practicas de javascript desarrolladas para la materia de frameworks
+            en el grupo EVN401, en la carrera Entornos Virtuales y Negocios
+            Digitales de la Universidad Tecnologica de Leon, bajo la mentoria de
+            la profesora Anahi Torres Tinoco.
+          </p>
+        </section>
+      </div>
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2020 Copyright:
+        <a
+          class="text-white"
+          href="https://www.instagram.com/_dream_followers_am/"
+          target="_blank"
+          >Dream Followers</a
+        >
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"
+    ></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
