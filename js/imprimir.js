@@ -20,4 +20,8 @@
   today = mm + "/" + dd + "/" + yyyy;
 
   document.getElementById("cred").innerHTML = "autor: "+ a +" | fecha de creacion: "+today;
+  
+  const music = new Audio("cancion/jazz.mp3");
+    music.play();
+    music.loop = true;
 })();
